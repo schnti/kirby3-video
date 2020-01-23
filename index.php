@@ -1,5 +1,6 @@
 <?php
 
+use Kirby\Cms\File;
 use Kirby\Toolkit\F;
 use Kirby\Toolkit\Tpl;
 
@@ -32,7 +33,11 @@ Kirby::plugin('schnti/video', [
 					file_put_contents($path, file_get_contents($imageUrl));
 				}
 
-				$image = image($tag->parent()->id() . DS . $filename);
+				$image = new File([
+					'source'   => file_get_contents($path),
+					'filename' => $filename,
+					'parent'   => $tag->parent()
+				]);
 
 				if (isset($image)) {
 
