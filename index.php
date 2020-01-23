@@ -5,7 +5,17 @@ use Kirby\Toolkit\F;
 use Kirby\Toolkit\Tpl;
 
 Kirby::plugin('schnti/video', [
-	'tags' => [
+	'translations' => [
+		'de' => [
+			'schnti.video.text'       => 'Zum Aktivieren des Videos musst du auf den Link klicken. Wir möchten dich darauf hinweisen, dass nach der Aktivierung Daten an YouTube übermittelt werden.',
+			'schnti.video.buttonText' => 'Video aktivieren',
+		],
+		'en' => [
+			'schnti.video.text'       => 'Click the button to activate the video. Then a connection to YouTube is established.',
+			'schnti.video.buttonText' => 'Activate video',
+		]
+	],
+	'tags'         => [
 		'youtube' => [
 			'attr' => array(
 				'class',

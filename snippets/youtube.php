@@ -10,9 +10,8 @@
         <div class="youtube-hint">
             <div class="youtube-hint-text">
                 <div>
-                    <p>Zum Aktivieren des Videos musst du auf den Link klicken. Wir möchten dich darauf hinweisen, dass nach der Aktivierung Daten an YouTube übermittelt
-                        werden.</p>
-                    <button class="button is-success is-normal youtube-hint-button">Video aktivieren</button>
+                    <p><?= t('schnti.video.text'); ?></p>
+                    <button class="button is-success is-normal youtube-hint-button"><?= t('schnti.video.buttonText'); ?></button>
                 </div>
             </div>
         </div>
