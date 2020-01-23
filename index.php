@@ -7,7 +7,7 @@ use Kirby\Toolkit\Tpl;
 Kirby::plugin('schnti/video', [
 	'translations' => [
 		'de' => [
-			'schnti.video.text'       => 'Zum Aktivieren des Videos musst du auf den Link klicken. Wir möchten dich darauf hinweisen, dass nach der Aktivierung Daten an YouTube übermittelt werden.',
+			'schnti.video.text'       => 'Klicke zum Aktivieren des Videos auf den Link. Wir möchten darauf hinweisen, dass nach der Aktivierung Daten an YouTube übermittelt werden',
 			'schnti.video.buttonText' => 'Video aktivieren',
 		],
 		'en' => [

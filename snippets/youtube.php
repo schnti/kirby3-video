@@ -11,7 +11,7 @@
             <div class="youtube-hint-text">
                 <div>
                     <p><?= t('schnti.video.text'); ?></p>
-                    <button class="button is-success is-normal youtube-hint-button"><?= t('schnti.video.buttonText'); ?></button>
+                    <button class="youtube-hint-button"><?= t('schnti.video.buttonText'); ?></button>
                 </div>
             </div>
         </div>

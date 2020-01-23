@@ -54,6 +54,7 @@
   max-height: 100%;
   z-index: 1100;
   font-size: 0.9em;
+  border: 2px solid #F2F2F2;
 }
 
 .youtube-container.disabled .youtube-hint .youtube-hint-text {
