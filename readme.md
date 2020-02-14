@@ -1,4 +1,4 @@
-# Video Plugin - DRAFT
+# Video Plugin
 
 A plugin for [Kirby 3 CMS](http://getkirby.com) to embed content from YouTube without compromising privacy.
 
