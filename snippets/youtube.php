@@ -12,6 +12,7 @@
                 <div>
                     <p><?= t('schnti.video.text'); ?></p>
                     <button class="youtube-hint-button"><?= t('schnti.video.buttonText'); ?></button>
+                    <small><a href="https://www.youtube.com/watch?v=<?= $id; ?>" class="youtube-hint-link" target="_blank"><?= t('schnti.video.linkText'); ?></a></small>
                 </div>
             </div>
         </div>
