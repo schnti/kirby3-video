@@ -9,12 +9,14 @@ Kirby::plugin('schnti/video', [
 		'de' => [
 			'schnti.video.text'       => 'Klicke zum Aktivieren des Videos auf den Link. Wir möchten darauf hinweisen, dass nach der Aktivierung Daten an YouTube übermittelt werden',
 			'schnti.video.buttonText' => 'Video aktivieren',
-			'schnti.video.linkText'   => 'oder auf YouTube anschauen'
+			'schnti.video.linkText'   => 'oder auf YouTube anschauen',
+			'schnti.video.id'         => 'YouTube ID:',
 		],
 		'en' => [
 			'schnti.video.text'       => 'Click the button to activate the video. Then a connection to YouTube is established.',
 			'schnti.video.buttonText' => 'Activate video',
-			'schnti.video.linkText'   => 'or watch on youtube'
+			'schnti.video.linkText'   => 'or watch on youtube',
+			'schnti.video.id'         => 'YouTube ID:',
 		]
 	],
 	'tags'         => [
