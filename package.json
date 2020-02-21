@@ -3,7 +3,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack"
+    "start": "gulp"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
