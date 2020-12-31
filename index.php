@@ -2,7 +2,6 @@
 
 use Kirby\Cms\File;
 use Kirby\Toolkit\F;
-use Kirby\Toolkit\Tpl;
 
 Kirby::plugin('schnti/video', [
 	'translations' => [
