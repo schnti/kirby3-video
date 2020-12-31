@@ -21,6 +21,9 @@ Kirby::plugin('schnti/video', [
 			'schnti.video.id'         => 'YouTube ID:',
 		]
 	],
+	'snippets'     => [
+		'youtube' => __DIR__ . '/snippets/youtube.php',
+	],
 	'tags'         => [
 		'youtube' => [
 			'attr' => array(
@@ -59,7 +62,7 @@ Kirby::plugin('schnti/video', [
 
 					$image->resize($width);
 
-					return Tpl::load(__DIR__ . DS . 'snippets' . DS . 'youtube.php', [
+					return snippet('youtube', [
 						'class' => $class,
 						'id'    => $id,
 						'image' => $image,
