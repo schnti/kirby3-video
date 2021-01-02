@@ -2,7 +2,6 @@
 
 use Kirby\Cms\File;
 use Kirby\Toolkit\F;
-use Kirby\Toolkit\Tpl;
 
 Kirby::plugin('schnti/video', [
 	'translations' => [
@@ -20,6 +19,9 @@ Kirby::plugin('schnti/video', [
 			'schnti.video.linkText'   => 'or watch on youtube',
 			'schnti.video.id'         => 'YouTube ID:',
 		]
+	],
+	'snippets'     => [
+		'youtube' => __DIR__ . '/snippets/youtube.php',
 	],
 	'tags'         => [
 		'youtube' => [
@@ -59,7 +61,7 @@ Kirby::plugin('schnti/video', [
 
 					$image->resize($width);
 
-					return Tpl::load(__DIR__ . DS . 'snippets' . DS . 'youtube.php', [
+					return snippet('youtube', [
 						'class' => $class,
 						'id'    => $id,
 						'image' => $image,

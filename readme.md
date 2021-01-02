@@ -41,7 +41,7 @@ Run these commands to update the plugin:
 ## CSS (SCSS)
 
 ```HTML
-<link rel="stylesheet" href="plugins/video/src/youtube.js">
+<link rel="stylesheet" href="plugins/video/dist/youtube.css">
 ```
 
 or
