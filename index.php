@@ -3,6 +3,37 @@
 use Kirby\Cms\File;
 use Kirby\Toolkit\F;
 
+function parseYoutube(string $url) {
+    $data = [];
+
+    # Extract YouTube video ID
+    # See http://stackoverflow.com/questions/2936467/parse-youtube-video-id-using-preg-match
+    preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[\w\-?&!#=,;]+/[\w\-?&!#=/,;]+/|(?:v|e(?:mbed)?)/|[\w\-?&!#=,;]*[?&]v=)|youtu\.be/)([\w-]{11})(?:[^\w-]|\Z)%i', $url, $match);
+    $data['id'] = $match[1] ?? $url;
+
+    # Extract YouTube playlist ID
+    # See https://stackoverflow.com/questions/5115233/fetching-youtube-playlist-id-with-php-regex
+    $parts = parse_url($url);
+
+    if (isset($parts['query'])) {
+        parse_str($parts['query'], $query);
+
+        if (isset($query['list'])) {
+            $data['playlist'] = $query['list'];
+        }
+    }
+
+    # Build embed URL
+    $data['src'] = 'https://www.youtube-nocookie.com/embed/' . $data['id'] . '?autoplay=1';
+
+    if (isset($data['playlist'])) {
+        $data['src'] = 'https://www.youtube-nocookie.com/embed/videoseries?list=' . $data['playlist'] . '&autoplay=1';
+    }
+
+    return $data;
+}
+
+
 Kirby::plugin('schnti/video', [
 	'translations' => [
 		'de' => [
@@ -31,20 +62,14 @@ Kirby::plugin('schnti/video', [
 			),
 			'html' => function ($tag) {
 
-				preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $tag->value, $match);
-
-				if (isset($match[1])) {
-					$id = $match[1];
-				} else {
-					$id = $tag->value;
-				}
+				$data = parseYoutube($tag->value);
 
 				$class = $tag->class;
 				$width = ($tag->width) ? $tag->width : 1000;
 
-				$imageUrl = 'https://i.ytimg.com/vi/' . $id . '/maxresdefault.jpg';
+				$imageUrl = 'https://i.ytimg.com/vi/' . $data['id'] . '/maxresdefault.jpg';
 
-				$filename = F::safeName('youtube_' . $id . '.jpg');
+				$filename = F::safeName('youtube_' . $data['id'] . '.jpg');
 				$path = $tag->parent()->root() . DS . $filename;
 
 				if (!file_exists($path)) {
@@ -63,7 +88,8 @@ Kirby::plugin('schnti/video', [
 
 					return snippet('youtube', [
 						'class' => $class,
-						'id'    => $id,
+						'id'    => $data['id'],
+						'src'   => $data['src'],
 						'image' => $image,
 						'width' => $width
 					]);
