@@ -89,6 +89,7 @@ Kirby::plugin('schnti/video', [
 					return snippet('youtube', [
 						'class' => $class,
 						'id'    => $data['id'],
+						'src'   => $data['src'],
 						'image' => $image,
 						'width' => $width
 					]);
