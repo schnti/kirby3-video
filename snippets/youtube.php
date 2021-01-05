@@ -2,7 +2,7 @@
 	<?php if (isset($id)) : ?>
 		<?= $image; ?>
         <div class="embed-container" style="display: none; padding-bottom: <?= str_replace(',', '.', $image->height() / $image->width() * 100); ?>%">
-            <iframe data-src="https://www.youtube-nocookie.com/embed/<?= $id; ?>?autoplay=1"
+            <iframe data-src="<?= $src; ?>"
                     frameborder="0"
                     allow="autoplay; encrypted-media"
                     allowfullscreen></iframe>
