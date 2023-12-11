@@ -70,7 +70,7 @@ Kirby::plugin('schnti/video', [
 				$imageUrl = 'https://i.ytimg.com/vi/' . $data['id'] . '/maxresdefault.jpg';
 
 				$filename = F::safeName('youtube_' . $data['id'] . '.jpg');
-				$path = $tag->parent()->root() . DS . $filename;
+				$path = $tag->parent()->root() . '/' . $filename;
 
 				if (!file_exists($path)) {
 					file_put_contents($path, file_get_contents($imageUrl));
