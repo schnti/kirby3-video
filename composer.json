@@ -1,6 +1,8 @@
 {
   "name": "schnti/video",
   "description": "kirby privacy video tag",
+  "homepage": "https://github.com/schnti/kirby-video",
+  "version": "1.4.1",
   "authors": [
     {
       "name": "Timo Schneider",
@@ -11,9 +13,9 @@
   "license": "MIT",
   "type": "kirby-plugin",
   "keywords": [
-    "kirby3",
-    "kirby3-cms",
-    "kirby3-plugin"
+    "kirby",
+    "kirby-cms",
+    "kirby-plugin"
   ],
   "require": {
     "getkirby/composer-installer": "^1.1"
